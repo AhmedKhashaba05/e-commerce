@@ -1,55 +1,57 @@
-import axios from "axios";
-import { createContext, useCallback, useState } from "react";
+import axios from 'axios'
+import { createContext, useCallback, useState } from 'react'
 
-export const CategoriesContext = createContext();
+export const CategoriesContext = createContext()
 
-const BASE_URL = "https://ecommerce.routemisr.com/api/v1";
+const BASE_URL = 'https://ecommerce.routemisr.com/api/v1'
 
 function CategoriesProvider({ children }) {
-  const [categories, setCategories] = useState(null);
-  const [subCategories, setSubCategories] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [filteredProducts, setFilteredProducts] = useState(null);
+  const [categories, setCategories] = useState(null)
+  const [subCategories, setSubCategories] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const [filteredProducts, setFilteredProducts] = useState(null)
 
   const getCategories = useCallback(async () => {
     try {
-      setError("");
-      setLoading(true);
-      const res = await axios(`${BASE_URL}/categories`);
-      setCategories(res.data.data);
+      setError('')
+      setLoading(true)
+      const res = await axios(`${BASE_URL}/categories`)
+      setCategories(res.data.data)
     } catch (error) {
-      setError(error);
+      setError(error)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  }, []);
+  }, [])
 
   const getSubCategories = useCallback(async () => {
     try {
-      setError("");
-      setLoading(true);
-      const res = await axios("https://route-ecommerce.onrender.com/api/v1/subcategories?limit=50");
-      setSubCategories(res.data.data);
+      setError('')
+      setLoading(true)
+      const res = await axios(
+        'https://route-ecommerce.onrender.com/api/v1/subcategories?limit=50'
+      )
+      setSubCategories(res.data.data)
     } catch (error) {
-      setError(error);
+      setError(error)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  }, []);
+  }, [])
 
-  const getFilteredProducts = useCallback(async (params) => {
+  const getFilteredProducts = useCallback(async params => {
     try {
-      setError("");
-      setLoading(true);
-      const res = await axios(`https://ecommerce.routemisr.com/api/v1/products${params}`);
-      setFilteredProducts(res.data.data);
+      setError('')
+      setLoading(true)
+      const res = await axios(`https://ecommerce.routemisr.com/api/v1/products${params}`)
+      setFilteredProducts(res.data.data)
     } catch (error) {
-      setError(error.message);
+      setError(error.message)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  }, []);
+  }, [])
 
   return (
     <CategoriesContext.Provider
@@ -61,12 +63,12 @@ function CategoriesProvider({ children }) {
         categories,
         subCategories,
         loading,
-        error,
+        error
       }}
     >
       {children}
     </CategoriesContext.Provider>
-  );
+  )
 }
 
-export default CategoriesProvider;
+export default CategoriesProvider

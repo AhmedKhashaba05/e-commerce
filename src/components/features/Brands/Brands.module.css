@@ -9,5 +9,7 @@
 }
 
 .brands .brand:hover {
-  box-shadow: 0 0 0 1px var(--main-color), 0 0 40px rgba(0, 80, 13, 0.2);
+  box-shadow:
+    0 0 0 1px var(--main-color),
+    0 0 40px rgba(0, 80, 13, 0.2);
 }

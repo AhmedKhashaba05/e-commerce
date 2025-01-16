@@ -1,21 +1,21 @@
-import { Outlet, useNavigation } from "react-router-dom";
-import Navbar from "./components/ui/Navbar/Navbar";
-import Footer from "./components/ui/Footer/Footer";
-import Spinner from "./components/ui/Spinner/Spinner";
-import UserProvider from "./components/context/UserContext";
-import ProductsProvider from "./components/context/ProductsContext";
-import CartProvider from "./components/context/CartContext";
-import WishlistProvider from "./components/context/WishlistContext";
-import { Toaster } from "react-hot-toast";
-import CategoriesProvider from "./components/context/CategoriesContext";
-import ScrollToTop from "./components/helpers/ScrollToTop";
-import BrandsProvider from "./components/context/BrandsContext";
+import { Outlet, useNavigation } from 'react-router-dom'
+import Navbar from './components/ui/Navbar/Navbar'
+import Footer from './components/ui/Footer/Footer'
+import Spinner from './components/ui/Spinner/Spinner'
+import UserProvider from './components/context/UserContext'
+import ProductsProvider from './components/context/ProductsContext'
+import CartProvider from './components/context/CartContext'
+import WishlistProvider from './components/context/WishlistContext'
+import { Toaster } from 'react-hot-toast'
+import CategoriesProvider from './components/context/CategoriesContext'
+import ScrollToTop from './components/helpers/ScrollToTop'
+import BrandsProvider from './components/context/BrandsContext'
 
 function App() {
-  const { state } = useNavigation();
+  const { state } = useNavigation()
 
   return (
-    <div className="App">
+    <div className='App'>
       <UserProvider>
         <ProductsProvider>
           <CartProvider>
@@ -23,8 +23,10 @@ function App() {
               <CategoriesProvider>
                 <BrandsProvider>
                   <Navbar />
-                  <main style={{ marginBlock: "60px", flexGrow: 1, position: "relative" }}>
-                    {state === "loading" && <Spinner />}
+                  <main
+                    style={{ marginBlock: '60px', flexGrow: 1, position: 'relative' }}
+                  >
+                    {state === 'loading' && <Spinner />}
                     <Outlet />
                   </main>
                 </BrandsProvider>
@@ -37,7 +39,7 @@ function App() {
       <ScrollToTop />
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

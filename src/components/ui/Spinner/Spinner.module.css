@@ -34,7 +34,7 @@
 }
 
 .dotSpinner__dot::before {
-  content: "";
+  content: '';
   height: 20%;
   width: 20%;
   border-radius: 50%;

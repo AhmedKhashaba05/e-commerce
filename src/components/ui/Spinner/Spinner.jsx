@@ -1,11 +1,11 @@
-import styles from "./Spinner.module.css";
+import styles from './Spinner.module.css'
 
-function Spinner({ size = "full" }) {
+function Spinner({ size = 'full' }) {
   return (
     <div
       style={{
-        width: size === "full" ? "100vw" : size,
-        height: size === "full" ? "100vh" : size,
+        width: size === 'full' ? '100vw' : size,
+        height: size === 'full' ? '100vh' : size
       }}
       className={styles.loaderContainer}
     >
@@ -21,7 +21,7 @@ function Spinner({ size = "full" }) {
         <div className={styles.dotSpinner__dot}></div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Spinner;
+export default Spinner

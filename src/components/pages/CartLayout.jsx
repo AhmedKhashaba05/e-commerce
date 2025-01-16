@@ -1,7 +1,7 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom'
 
 function CartLayout() {
-  return <Outlet />;
+  return <Outlet />
 }
 
-export default CartLayout;
+export default CartLayout

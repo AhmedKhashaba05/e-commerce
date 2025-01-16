@@ -1,7 +1,7 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom'
 
 function CategoriesLayout() {
-  return <Outlet />;
+  return <Outlet />
 }
 
-export default CategoriesLayout;
+export default CategoriesLayout

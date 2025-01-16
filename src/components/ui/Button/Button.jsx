@@ -1,21 +1,21 @@
-import { Link } from "react-router-dom";
-import styles from "./Button.module.css";
+import { Link } from 'react-router-dom'
+import styles from './Button.module.css'
 
 function Button({
-  type = "button",
+  type = 'button',
   handleClick = null,
-  to = "/",
+  to = '/',
   disabled = false,
   moreStyles = null,
-  moreClasses = "",
-  children = "Submit",
+  moreClasses = '',
+  children = 'Submit'
 }) {
-  if (type === "link")
+  if (type === 'link')
     return (
       <Link className={`${moreClasses} ${styles.button}`} to={to} style={moreStyles}>
         {children}
       </Link>
-    );
+    )
 
   return (
     <button
@@ -27,7 +27,7 @@ function Button({
     >
       {children}
     </button>
-  );
+  )
 }
 
-export default Button;
+export default Button
